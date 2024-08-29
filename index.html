@@ -3,117 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReasonAI - Voice Interaction</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        #output {
-            color: #444;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            outline: none;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <meta name="description" content="CosmicCoin - Your Gateway to the Future of Cryptocurrency">
+    <title>CosmicCoin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1>ReasonAI - Voice Interaction</h1>
-        <p>Speak to ReasonAI to engage.</p>
-        <div id="output"></div>
-        <button onclick="startListening()">Start Listening</button>
-    </div>
+<body class="bg-gray-100 text-gray-800">
 
-    <script>
-        const recognition = new window.webkitSpeechRecognition();
-        recognition.continuous = false;
+    <!-- Header -->
+    <header class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">CosmicCoin</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#wallet" class="hover:underline">Wallet</a></li>
+                    <li><a href="#news" class="hover:underline">News/Blog</a></li>
+                    <li><a href="#faq" class="hover:underline">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        const supportedLanguages = [
-            'en-US', 'es-ES', 'fr-FR', 'de-DE', 'it-IT', 
-            'pt-PT', 'nl-NL', 'sv-SE', 'da-DK', 'fi-FI', 
-            'nb-NO', 'tr-TR', 'ru-RU', 'pl-PL', 'cs-CZ', 
-            'hu-HU', 'ro-RO', 'el-GR', 'ja-JP', 'ko-KR', 
-            'zh-CN', 'zh-TW', 'th-TH', 'id-ID', 'ms-MY', 
-            'vi-VN', 'hi-IN', 'bn-IN', 'ta-IN', 'te-IN',
-            'pcm', // Nigerian Pidgin
-        ];
+    <!-- Home Section -->
+    <section id="home" class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Welcome to CosmicCoin</h2>
+            <p class="text-xl mb-8">Your gateway to the future of cryptocurrency. Join us on a journey to explore the cosmos with CosmicCoin.</p>
+            <a href="#wallet" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700">Download Wallet</a>
+        </div>
+    </section>
 
-        recognition.lang = supportedLanguages;
+    <!-- About Section -->
+    <section id="about" class="bg-gray-200 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">About CosmicCoin</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">CosmicCoin is a decentralized cryptocurrency designed to bring the future of finance to everyone. With a focus on security, accessibility, and innovation, CosmicCoin is here to revolutionize the way you think about money.</p>
+        </div>
+    </section>
 
-        recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript;
-            document.getElementById('output').innerText = 'You said: ' + transcript;
-            // Perform NLU to understand user intents and respond accordingly
-            handleUserInput(transcript);
-        };
+    <!-- Wallet Section -->
+    <section id="wallet" class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">CosmicWallet</h2>
+            <p class="text-xl mb-8">Download CosmicWallet to securely store, send, and receive CosmicCoin. Available on all major platforms.</p>
+            <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-full text-lg hover:bg-green-700">Download for Windows</a>
+            <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-full text-lg hover:bg-green-700 ml-4">Download for MacOS</a>
+        </div>
+    </section>
 
-        recognition.onerror = function(event) {
-            console.error('Speech recognition error:', event.error);
-        };
+    <!-- News/Blog Section -->
+    <section id="news" class="bg-gray-200 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Latest News & Blog</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">CosmicCoin Reaches New Heights</h3>
+                    <p class="text-gray-600">CosmicCoin continues to break barriers, reaching new heights in the cryptocurrency world...</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read more</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">How to Use CosmicWallet</h3>
+                    <p class="text-gray-600">A comprehensive guide on how to download, set up, and use CosmicWallet for all your transactions...</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read more</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">The Future of Decentralized Finance</h3>
+                    <p class="text-gray-600">Discover the future of finance with CosmicCoin as we explore the potential of decentralized finance...</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function startListening() {
-            recognition.start();
-            document.getElementById('output').innerText = 'Listening...';
-        }
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div class="text-left max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">What is CosmicCoin?</h3>
+                    <p class="text-gray-600">CosmicCoin is a decentralized cryptocurrency designed to provide a secure and efficient way to manage your finances in the digital age.</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">How do I download the wallet?</h3>
+                    <p class="text-gray-600">You can download the CosmicWallet from the Wallet section of our website. It’s available for Windows, MacOS, and more.</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">Is CosmicCoin secure?</h3>
+                    <p class="text-gray-600">Yes, CosmicCoin is built on a secure and robust blockchain network that ensures the safety and privacy of all transactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function speakResponse(response) {
-            const synthesis = window.speechSynthesis;
-            const utterance = new SpeechSynthesisUtterance(response);
-            synthesis.speak(utterance);
-        }
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 CosmicCoin. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
-        function handleUserInput(input) {
-            // Perform NLU and respond accordingly
-            // Example: If input contains a request for help, respond with assistance
-            if (input.toLowerCase().includes('help')) {
-                const response = "Sure, I'm here to assist you. What do you need help with?";
-                speakResponse(response);
-            } else {
-                // Handle other user intents or tasks based on input
-                // Example: Call APIs to solve world problems based on user input
-                // For demonstration purposes, let's just echo the input
-                speakResponse("You said: " + input);
-            }
-        }
-    </script>
 </body>
 </html>
